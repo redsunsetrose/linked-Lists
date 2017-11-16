@@ -1,0 +1,85 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Nov 14 20:40:56 2017
+
+@author: resquive
+"""
+a=int("123")
+type(a)
+
+print(a)
+import datetime
+
+print(datetime.datetime.now())
+
+str(datetime.datetime.now( ).date( ))
+
+print(str(datetime.datetime.now( ).date( )))
+
+"Hello" if False else "Goodbye"
+ 
+"Hello" if True else "Goodbye"
+
+# (FalseValue, TrueValue)[Expression]
+("Hello", "Goodbye")[True]
+
+def hello():
+    print ("first")
+    
+hello()
+
+def h2(Greeting):
+    print(Greeting)
+    
+h2("hee")
+
+h2("rosa")
+
+h2("rosa & James")
+
+def addit(v1,v2):
+    print(v1, " + " ,v2, "is ", v1+v2)
+    
+addit(2,4)
+
+def h3(Greeting="No Value Supplied"):
+    print(Greeting)
+    
+h3()
+h3("dd")
+
+
+def Hello4(ArgCount,*VarArgs):
+    print("you passed",ArgCount,"arguments")
+    for arg in VarArgs:
+        print(arg)
+        
+Hello4(2,"one","two")
+
+def doadd(v1,v2):
+    return v1+v2
+
+print(doadd(3,4))
+
+
+#name=input("what is your name")
+#print("Hello gorgeous", name)
+
+
+testme=6
+
+if testme==6:
+    print("testme does equal 6")
+
+#value=int(input("type a number from 1-10 "))
+
+#if (value >= 1 and value<=10):
+#    print("you typed: ",value)
+
+msd="hello rosa"
+print(msd.upper())
+
+class MyClass:
+    myvar=0
+    
