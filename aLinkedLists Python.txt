@@ -1,0 +1,93 @@
+#-- def a node class object
+# node class is sub-object of linked list
+
+class node:                           #node object contains 2 elements
+    def __init__(self,data=None):
+        self.data=data                
+        self.next=None               #pointer to next next node
+                                    #by default last pointer will always point to None/null
+    
+class linked_list:
+    def __init__(self):
+        self.head=node()     #head node is just a named element to access list
+        
+        
+    def append(self,data):      #add a new node to linked list
+        new_node=node(data)     #create a new node
+        cur=self.head           #start on left
+        while cur.next!=None: 
+            cur=cur.next
+        cur.next=new_node
+        
+
+    def length(self):       #only pass instance of linked list
+        cur=self.head
+        total=0
+        while cur.next!=None:
+            total+=1
+            cur=cur.next
+        return total
+    
+    def display(self):
+        elems=[]    # this is a regular list with nothing for now
+        cur_node=self.head
+        while cur_node.next!=None:
+            cur_node=cur_node.next
+            elems.append(cur_node.data)
+        print(elems)
+        
+    def get(self,index):
+        if index>=self.length():
+            print("ERROR: Get index not in array!")
+            return None
+        cur_idx=0
+        cur_node=self.head
+        while True:
+            cur_node=cur_node.next
+            if cur_idx==index:
+                return cur_node.data
+            cur_idx+=1
+           
+    def erase(self,index):
+        if index>=self.length():
+            print("Error: 'Index out of error")
+            return
+        cur_idx=0
+        cur_node=self.head
+        while True:
+            last_node=cur_node
+            cur_node=cur_node.next
+            if cur_idx==index:
+                last_node.next=cur_node.next
+                return
+            cur_idx+=1
+        
+
+        
+mylist=linked_list()
+mylist.display()
+
+print("\nafter adding elements " )
+mylist.append(1)
+mylist.append(2)
+mylist.append(3)
+mylist.append(4)
+mylist.append('a string')
+mylist.append('another string')
+mylist.append('apple')
+mylist.append('string 1')
+mylist.append('Teaching is fun')
+
+mylist.display()
+print("length of list is " , mylist.length(),"\n")
+
+mylist.erase(2)
+
+print('after erase\n')
+mylist.display1()
+
+#print("element at first node is ",mylist.get(1))
+
+print('data element in node is %s ' % mylist.get(4))
+
+print("length of list is " , mylist.length())
